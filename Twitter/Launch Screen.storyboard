@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="TwitterLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FP1-ro-CQh">
-                                <rect key="frame" x="86" y="203" width="203" height="223"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-NK-otl">
+                                <rect key="frame" x="57" y="298" width="260" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -31,6 +31,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TwitterLogo" width="120" height="120"/>
+        <image name="TwitterLogoBlue" width="200" height="200"/>
     </resources>
 </document>

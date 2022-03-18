@@ -22,6 +22,8 @@ class homeTableViewController: UITableViewController {
         
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 150
 
     }
     
@@ -52,6 +54,13 @@ class homeTableViewController: UITableViewController {
             print("Could not retrieve tweets! oh no!!")
         })
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadMoreTweets()
+    }
+    
     
     func loadMoreTweets(){
         
@@ -85,6 +94,7 @@ class homeTableViewController: UITableViewController {
     
     
     
+    
     @IBAction func onLogout(_ sender: Any) {
         
         TwitterAPICaller.client?.logout()
@@ -108,7 +118,11 @@ class homeTableViewController: UITableViewController {
             cell.profileImage.image = UIImage(data: imageData)
             
         }
-    
+        
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
+        
     
         return cell
         
